@@ -18,7 +18,8 @@ class MyServer(protocol.Protocol):
 
 		try:
 			code = int(data[0].decode())
-		except Exception:
+		except Exception as e:
+			print(e)
 			return None
 		
 		self.factory.handleRequest(code)
