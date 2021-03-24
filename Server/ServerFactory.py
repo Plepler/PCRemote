@@ -1,7 +1,6 @@
 from twisted.internet import protocol
 from Server import MyServer, RequestCodes
 import pyautogui
-import 
 class MyFactory(protocol.Factory):
 	
 	protocol = MyServer

@@ -26,7 +26,7 @@ class MyServer(protocol.Protocol):
 
 
 	def connectionMade(self):
-		pass
+		print("Someone connected")
 
 	def connectionLost(self, reason):
 		print(reason.getErrorMessage())
