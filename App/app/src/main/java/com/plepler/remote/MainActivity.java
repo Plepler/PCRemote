@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity
     private ImageButton prevtrackBtn;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -24,14 +25,16 @@ public class MainActivity extends AppCompatActivity
 
         playBtn = (ImageButton)findViewById(R.id.play);
         pauseBtn = (ImageButton)findViewById(R.id.pause);
-        ImageButton nexttrackBtn = (ImageButton)findViewById(R.id.nextrack);
-        ImageButton prevtrackBtn = (ImageButton)findViewById(R.id.prevtrack);
+        nexttrackBtn = (ImageButton)findViewById(R.id.nextrack);
+        prevtrackBtn = (ImageButton)findViewById(R.id.prevtrack);
 
         pauseBtn.setVisibility(View.GONE);
 
+        // Create socket handler to connect to pc
         sh = SocketHandler.getInstance();
         sh.start();
     }
+
 
 
     public void playPause(View view)
@@ -65,6 +68,16 @@ public class MainActivity extends AppCompatActivity
     {
         sendMessage((byte)RequestCodes.REWIND);
     }
+    public void volup(View view)
+    {
+        sendMessage((byte)RequestCodes.VOLUP);
+    }
+    public void voldown(View view)
+    {
+        sendMessage((byte)RequestCodes.VOLDOWN);
+    }
+
+
 
     private boolean sendMessage(byte code)
     {
@@ -79,6 +92,5 @@ public class MainActivity extends AppCompatActivity
             return false;
         }
     }
-
 
 }
