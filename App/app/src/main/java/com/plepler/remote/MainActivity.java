@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity
 
         pauseBtn.setVisibility(View.GONE);
 
-
         sh = SocketHandler.getInstance();
         sh.start();
     }
@@ -53,7 +52,6 @@ public class MainActivity extends AppCompatActivity
             playBtn.setVisibility(View.VISIBLE);
         }
         isPlaying = !isPlaying;
-
     }
     public void nexttrack(View view)
     {
