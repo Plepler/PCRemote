@@ -34,36 +34,53 @@ public class MainActivity extends AppCompatActivity
         sh.start();
     }
 
+
     public void playPause(View view)
     {
-        byte code = (byte)RequestCodes.PLAYPAUSE;
-        sh.sendMessage(code);
+        if(!sendMessage((byte)RequestCodes.PLAYPAUSE))
+        {
+            return;
+        }
 
         if (isPlaying)
         {
             pauseBtn.setVisibility(View.VISIBLE);
             playBtn.setVisibility(View.GONE);
-            isPlaying = !isPlaying;
         }
         else
         {
             pauseBtn.setVisibility(View.GONE);
             playBtn.setVisibility(View.VISIBLE);
-            isPlaying = !isPlaying;
+        }
+        isPlaying = !isPlaying;
+
+    }
+    public void nexttrack(View view)
+    {
+        sendMessage((byte)RequestCodes.NEXTTRACK);
+    }
+    public void prevtrack(View view)
+    {
+        sendMessage((byte)RequestCodes.PREVTRACK);
+    }
+    public void rewind(View view)
+    {
+        sendMessage((byte)RequestCodes.REWIND);
+    }
+
+    private boolean sendMessage(byte code)
+    {
+        try
+        {
+            sh.sendMessage(code);
+            return true;
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+            return false;
         }
     }
 
-
-    public void nexttrack(View view)
-    {
-        byte code = (byte)RequestCodes.NEXTTRACK;
-        sh.sendMessage(code);
-    }
-
-    public void prevtrack(View view)
-    {
-        byte code = (byte)RequestCodes.PREVTRACK;
-        sh.sendMessage(code);
-    }
 
 }

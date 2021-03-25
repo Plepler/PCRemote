@@ -55,14 +55,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_media_previous" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <ImageButton
+        android:id="@+id/rewind"
+        android:onClick="rewind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nextrack"
-        app:srcCompat="@drawable/deezer" />
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/nextrack"
+        app:layout_constraintStart_toEndOf="@+id/prevtrack"
+        app:layout_constraintTop_toTopOf="@+id/nextrack"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
