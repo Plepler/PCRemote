@@ -1,6 +1,7 @@
 from twisted.internet import reactor, protocol
 
 PORT = 9000
+FIRST_ASCII_DIGIT = 48 # '0'
 
 class RequestCodes():
 	PLAYPAUSE = 1 # Pause / Resume
@@ -17,10 +18,11 @@ class MyServer(protocol.Protocol):
 			return None
 
 		try:
-			code = int(data[0].decode())
-		except Exception:
+			code = data[0] - FIRST_ASCII_DIGIT
+		except Exception as e:
+			print(e)
 			return None
-		
+
 		self.factory.handleRequest(code)
 
 

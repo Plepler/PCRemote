@@ -1,17 +1,9 @@
 package com.plepler.remote;
-import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
+import android.util.Log;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.io.Serializable;
-import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.net.SocketAddress;
 import java.util.Stack;
 import java.util.concurrent.Callable;
 
@@ -47,7 +39,6 @@ public class SocketHandler extends Thread
         this.calls.push(call);
     }
 
-
     @Override
     public void run()
     {
@@ -57,11 +48,7 @@ public class SocketHandler extends Thread
             Log.d("MyDebug", "Trying to reconnect..");
             // Create and connect socket, create writer to socket
             sock = new Socket(IP, 9000);
-
-            /* No need to receive data in this version
-            readerHandler = new ReaderHandler(sock);
-            readerHandler.start();
-             */
+            Log.d("MyDebug", "Connected");
 
             writerHandler = new WriterHandler(sock);
             writerHandler.start();
