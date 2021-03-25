@@ -22,8 +22,7 @@ class MyServer(protocol.Protocol):
 		except Exception as e:
 			print(e)
 			return None
-		print(code)
-		print("handleing request")
+
 		self.factory.handleRequest(code)
 
 

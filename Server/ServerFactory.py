@@ -36,7 +36,6 @@ class MyFactory(protocol.Factory):
 			self.prevtrack()
 
 		if RequestCodes.PLAYPAUSE == code:
-			print("executin playpause")
 			self.playpause()
 
 		if RequestCodes.REWIND == code:
