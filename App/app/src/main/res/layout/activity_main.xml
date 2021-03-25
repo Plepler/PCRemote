@@ -7,6 +7,8 @@
     tools:context=".MainActivity">
 
 
+
+
     <ImageButton
         android:id="@+id/pause"
         android:layout_width="wrap_content"
@@ -38,6 +40,7 @@
         android:layout_marginTop="124dp"
         android:layout_marginEnd="84dp"
         android:layout_marginRight="84dp"
+        android:layout_marginBottom="32dp"
         android:onClick="nexttrack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -50,6 +53,7 @@
         android:layout_marginStart="84dp"
         android:layout_marginLeft="84dp"
         android:layout_marginTop="124dp"
+        android:contentDescription="TODO"
         android:onClick="prevtrack"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -57,14 +61,36 @@
 
     <ImageButton
         android:id="@+id/rewind"
-        android:onClick="rewind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
+        android:onClick="rewind"
         app:layout_constraintEnd_toStartOf="@+id/nextrack"
         app:layout_constraintStart_toEndOf="@+id/prevtrack"
         app:layout_constraintTop_toTopOf="@+id/nextrack"
         app:srcCompat="@android:drawable/ic_menu_revert" />
 
+    <Button
+        android:id="@+id/volup"
+        android:onClick="volup"
+        android:layout_width="43dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nextrack" />
+    <Button
+        android:id="@+id/voldown"
+        android:onClick="voldown"
+        android:layout_width="43dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="50dp"
+        android:text="-"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prevtrack" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,6 +23,12 @@ class MyFactory(protocol.Factory):
 		pyautogui.press('prevtrack')
 		pyautogui.press('nexttrack')
 
+	def volup(self):
+		pyautogui.press('volumeup')
+
+	def voldown(self):
+		pyautogui.press('volumedown')
+
 	#############TRACK CONTROL############
 
 
@@ -40,3 +46,9 @@ class MyFactory(protocol.Factory):
 
 		if RequestCodes.REWIND == code:
 			self.rewind()
+
+		if RequestCodes.VOLUP == code:
+			self.volup()
+
+		if RequestCodes.VOLDOWN == code:
+			self.voldown()

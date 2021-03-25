@@ -8,6 +8,8 @@ class RequestCodes():
 	NEXTTRACK = 2
 	PREVTRACK = 3
 	REWIND = 4
+	VOLUP = 5
+	VOLDOWN = 6
 
 class MyServer(protocol.Protocol):
     
