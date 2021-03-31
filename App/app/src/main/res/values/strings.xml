@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Remote</string>
+    <string name="alert_text">Are you sure you want to shut down the computer?</string>
 </resources>
