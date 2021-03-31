@@ -1,5 +1,6 @@
 from twisted.internet import protocol
 from Server import MyServer, RequestCodes
+import os
 import pyautogui
 class MyFactory(protocol.Factory):
 	
@@ -29,6 +30,9 @@ class MyFactory(protocol.Factory):
 	def voldown(self):
 		pyautogui.press('volumedown')
 
+	def shutdown(self):
+		os.system('shutdown -s')
+
 	#############TRACK CONTROL############
 
 
@@ -52,3 +56,6 @@ class MyFactory(protocol.Factory):
 
 		if RequestCodes.VOLDOWN == code:
 			self.voldown()
+
+		if RequestCodes.SHUTDOWN == code:
+			self.shutdown()

@@ -8,4 +8,5 @@ public class RequestCodes
     public static int REWIND = 4;
     public static int VOLUP = 5;
     public static int VOLDOWN = 6;
+    public static int SHUTDOWN = 7;
 }
