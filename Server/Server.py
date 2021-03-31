@@ -10,6 +10,7 @@ class RequestCodes():
 	REWIND = 4
 	VOLUP = 5
 	VOLDOWN = 6
+	SHUTDOWN = 7
 
 class MyServer(protocol.Protocol):
     
