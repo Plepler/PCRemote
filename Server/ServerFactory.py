@@ -56,3 +56,6 @@ class MyFactory(protocol.Factory):
 
 		if RequestCodes.VOLDOWN == code:
 			self.voldown()
+
+		if RequestCodes.SHUTDOWN == code:
+			self.shutdown()
